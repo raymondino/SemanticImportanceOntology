@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY prov "http://www.w3.org/ns/prov#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/rui/ontologies/semanticimportance#"
+     xml:base="http://www.semanticweb.org/rui/ontologies/semanticimportance"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance/1.0"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#ArrivalTimestamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#ArrivalTimestamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TemporalProvenance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#ExpirationTimestamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#ExpirationTimestamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TemporalProvenance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#GenerationTimestamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#GenerationTimestamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TemporalProvenance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#Provenance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#Provenance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationFrequency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationFrequency">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationRecency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationRecency">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#RecencyTimestamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#RecencyTimestamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TemporalProvenance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#TemporalProvenance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#TemporalProvenance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#Provenance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustModel">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustWorthiness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustWorthiness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aSoccerOffsideRelevanceOntology -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aSoccerOffsideRelevanceOntology">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampOfRecentQueryParticipation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampOfRecentQueryParticipation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#RecencyTimestamp"/>
+        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataArrives -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataArrives">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#ArrivalTimestamp"/>
+        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataExpires -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataExpires">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#ExpirationTimestamp"/>
+        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataIsGenerated -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataIsGenerated">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#GenerationTimestamp"/>
+        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTrustEquation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTrustEquation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#dataItemXisRelevantToQueryY -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#dataItemXisRelevantToQueryY">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevance"/>
+        <prov:value rdf:datatype="&xsd;boolean">true</prov:value>
+        <prov:wasDerivedFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aSoccerOffsideRelevanceOntology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#theTimestampWhenQueryEngineUsesADataItemToProduceResult -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#theTimestampWhenQueryEngineUsesADataItemToProduceResult">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationRecency"/>
+        <prov:generatedAtTime rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:generatedAtTime>
+        <prov:wasGeneratedBy rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#theTotalTimesOfADataItemUsedByQueryEngineForResults -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#theTotalTimesOfADataItemUsedByQueryEngineForResults">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationFrequency"/>
+        <prov:value rdf:datatype="&xsd;integer">3</prov:value>
+        <prov:wasGeneratedBy rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#trustworthinessInstance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#trustworthinessInstance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustWorthiness"/>
+        <prov:value rdf:datatype="&xsd;integer">10</prov:value>
+        <prov:wasDerivedFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTrustEquation"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
