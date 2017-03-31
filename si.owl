@@ -27,6 +27,25 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#isRelevantTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#isRelevantTo">
+        <rdfs:comment>describes how relevant A is to B. The relevance can be described with a relevance ontology</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -39,6 +58,23 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#ArrivalTimestamp">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TemporalProvenance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#DataGraph -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#DataGraph">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#DataTrustWorthiness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#DataTrustWorthiness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
     </owl:Class>
     
 
@@ -67,9 +103,43 @@
     
 
 
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#Query -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#Query">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryEngine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryEngine">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipation -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&prov;generated"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryResult"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&prov;used"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#DataGraph"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&prov;used"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryEngine"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
         <rdfs:subClassOf rdf:resource="&prov;Activity"/>
     </owl:Class>
@@ -95,8 +165,27 @@
     <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevance -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevance">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&prov;hadPrimarySource"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#isRelevantTo"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#Query"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&prov;wasDerivedFrom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationRecency"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
-        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
     </owl:Class>
     
 
@@ -104,6 +193,14 @@
     <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryResult -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryResult">
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
     </owl:Class>
     
@@ -139,15 +236,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustWorthiness -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustWorthiness">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
-        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
-    </owl:Class>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -159,10 +247,29 @@
     
 
 
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataGraph -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataGraph">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#DataGraph"/>
+        <isRelevantTo rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTargetQuery"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipation"/>
+        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataGraph"/>
+        <prov:generated rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aQueryResult"/>
+        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#stardogQueryEngine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aQueryResult -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aQueryResult">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryResult"/>
     </owl:NamedIndividual>
     
 
@@ -171,6 +278,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aSoccerOffsideRelevanceOntology">
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTargetQuery -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTargetQuery">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#Query"/>
     </owl:NamedIndividual>
     
 
@@ -222,9 +337,17 @@
     <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#dataItemXisRelevantToQueryY -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#dataItemXisRelevantToQueryY">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevance"/>
         <prov:value rdf:datatype="&xsd;boolean">true</prov:value>
+        <prov:hadPrimarySource rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataGraph"/>
         <prov:wasDerivedFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aSoccerOffsideRelevanceOntology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#stardogQueryEngine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#stardogQueryEngine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryEngine"/>
     </owl:NamedIndividual>
     
 
@@ -252,7 +375,7 @@
     <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#trustworthinessInstance -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#trustworthinessInstance">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustWorthiness"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#DataTrustWorthiness"/>
         <prov:value rdf:datatype="&xsd;integer">10</prov:value>
         <prov:wasDerivedFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTrustEquation"/>
     </owl:NamedIndividual>
