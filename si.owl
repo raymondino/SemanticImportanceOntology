@@ -62,9 +62,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#DataGraph -->
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#BackgroundOntology -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#DataGraph">
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#BackgroundOntology">
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
     </owl:Class>
     
@@ -131,11 +131,11 @@
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="&prov;used"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#DataGraph"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryEngine"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="&prov;used"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryEngine"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#StreamingDataGraph"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -184,8 +184,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationRecency"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
     </owl:Class>
     
 
@@ -220,6 +220,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#StreamingDataGraph -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#StreamingDataGraph">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#TemporalProvenance -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#TemporalProvenance">
@@ -247,11 +255,13 @@
     
 
 
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataGraph -->
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#PlayerA_commits_an_offside_offence -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataGraph">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#DataGraph"/>
-        <isRelevantTo rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTargetQuery"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#PlayerA_commits_an_offside_offence">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryResult"/>
+        <rdfs:comment>the query result indicates
+that PlayerA commits
+an oside oence</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -259,77 +269,9 @@
     <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults">
-        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataGraph"/>
-        <prov:generated rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aQueryResult"/>
-        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#stardogQueryEngine"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aQueryResult -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aQueryResult">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryResult"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aSoccerOffsideRelevanceOntology -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aSoccerOffsideRelevanceOntology">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTargetQuery -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTargetQuery">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#Query"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampOfRecentQueryParticipation -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampOfRecentQueryParticipation">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#RecencyTimestamp"/>
-        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataArrives -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataArrives">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#ArrivalTimestamp"/>
-        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataExpires -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataExpires">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#ExpirationTimestamp"/>
-        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataIsGenerated -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTimestampWhenDataIsGenerated">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#GenerationTimestamp"/>
-        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#aTrustEquation -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTrustEquation">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustModel"/>
+        <prov:generated rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#PlayerA_commits_an_offside_offence"/>
+        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_PlayerA_a_attacker"/>
+        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#stardog_triplestore_sparql_engine"/>
     </owl:NamedIndividual>
     
 
@@ -338,46 +280,181 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#dataItemXisRelevantToQueryY">
         <prov:value rdf:datatype="&xsd;boolean">true</prov:value>
-        <prov:hadPrimarySource rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataGraph"/>
-        <prov:wasDerivedFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aSoccerOffsideRelevanceOntology"/>
+        <prov:hadPrimarySource rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_PlayerA_a_attacker"/>
+        <prov:wasDerivedFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#soccer_offside_query_relevance_ontology"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#stardogQueryEngine -->
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_PlayerA_a_attacker -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#stardogQueryEngine">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryEngine"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_PlayerA_a_attacker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#StreamingDataGraph"/>
+        <isRelevantTo rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#who_commits_offside_offence"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#theTimestampWhenQueryEngineUsesADataItemToProduceResult -->
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_arrival_timestamp -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#theTimestampWhenQueryEngineUsesADataItemToProduceResult">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationRecency"/>
-        <prov:generatedAtTime rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:generatedAtTime>
-        <prov:wasGeneratedBy rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_arrival_timestamp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#ArrivalTimestamp"/>
+        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
+        <rdfs:comment>the arrival timestamp of graph1</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#theTotalTimesOfADataItemUsedByQueryEngineForResults -->
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_expiration_timestamp -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#theTotalTimesOfADataItemUsedByQueryEngineForResults">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_expiration_timestamp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#ExpirationTimestamp"/>
+        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
+        <rdfs:comment>the expiration timestamp of graph1</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_generation_timestamp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_generation_timestamp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#GenerationTimestamp"/>
+        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
+        <rdfs:comment>the generation timestamp of graph1</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_graph2_graph3_background_ontology_stardog_query_engine_target_query_query_result -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_graph2_graph3_background_ontology_stardog_query_engine_target_query_query_result">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipation"/>
+        <prov:generated rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#PlayerA_commits_an_offside_offence"/>
+        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_PlayerA_a_attacker"/>
+        <prov:generated rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_query_participation_frequency_value"/>
+        <prov:generated rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_query_participation_recency_timestamp"/>
+        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph2_PlayerA_a_BallLastToucher"/>
+        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph3_PlayerA_a_PlayerAt_OffsidePosition"/>
+        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#soccer_offside_background_ontology"/>
+        <prov:used rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#stardog_triplestore_sparql_engine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_is_relevant_to_query_graph7_is_irrelevant_to_query -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_is_relevant_to_query_graph7_is_irrelevant_to_query">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevance"/>
+        <prov:wasDerivedFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#soccer_offside_query_relevance_ontology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_query_participation_frequency_value -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_query_participation_frequency_value">
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationFrequency"/>
         <prov:value rdf:datatype="&xsd;integer">3</prov:value>
+        <rdfs:comment>graph1 refers to
+\graph1 PlayerA a Attacker&quot;
+(see StreamingDataGraph
+individuals for details)</rdfs:comment>
         <prov:wasGeneratedBy rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#trustworthinessInstance -->
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_query_participation_recency_timestamp -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#trustworthinessInstance">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_query_participation_recency_timestamp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationRecency"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#RecencyTimestamp"/>
+        <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
+        <rdfs:comment>the timestamp when graph1
+participates in the query.</rdfs:comment>
+        <prov:wasGeneratedBy rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph2_PlayerA_a_BallLastToucher -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph2_PlayerA_a_BallLastToucher">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#StreamingDataGraph"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph3_PlayerA_a_PlayerAt_OffsidePosition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph3_PlayerA_a_PlayerAt_OffsidePosition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#StreamingDataGraph"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#graph4_PlayerB_a_Attacker -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph4_PlayerB_a_Attacker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#StreamingDataGraph"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#left_foot_position_has_trust_score_of_1_right_has_0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#left_foot_position_has_trust_score_of_1_right_has_0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TrustModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#left_foot_position_is_trusted_right_foot_position_is_untrusted -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#left_foot_position_is_trusted_right_foot_position_is_untrusted">
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#DataTrustWorthiness"/>
         <prov:value rdf:datatype="&xsd;integer">10</prov:value>
-        <prov:wasDerivedFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aTrustEquation"/>
+        <rdfs:comment>right foot position is trusted, left foot position is not trusted.</rdfs:comment>
+        <prov:wasDerivedFrom rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#left_foot_position_has_trust_score_of_1_right_has_0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#soccer_offside_background_ontology -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#soccer_offside_background_ontology">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#BackgroundOntology"/>
+        <rdfs:comment>soccer offside background ontology provides necessary knowledge for defining and determining soccer offside offences.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#soccer_offside_query_relevance_ontology -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#soccer_offside_query_relevance_ontology">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology"/>
+        <rdfs:comment>the query relevance ontology to
+help lter irrelevant data out</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#stardog_triplestore_sparql_engine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#stardog_triplestore_sparql_engine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryEngine"/>
+        <rdfs:comment>in soccer oside use case, Stardog
+triplestore is used thus its SPARQL
+query engine is used.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rui/ontologies/semanticimportance#who_commits_offside_offence -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#who_commits_offside_offence">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#Query"/>
+        <rdfs:comment>the query &quot;who commits an offside offence&quot; is the target query and registered in the system.</rdfs:comment>
     </owl:NamedIndividual>
 </rdf:RDF>
 
