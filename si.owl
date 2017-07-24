@@ -259,9 +259,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#PlayerA_commits_an_offside_offence">
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryResult"/>
-        <rdfs:comment>the query result indicates
-that PlayerA commits
-an offside offence</rdfs:comment>
+        <rdfs:comment>the query result indicates that PlayerA commits an offside offence</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -355,10 +353,7 @@ an offside offence</rdfs:comment>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#graph1_query_participation_frequency_value">
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationFrequency"/>
         <prov:value rdf:datatype="&xsd;integer">3</prov:value>
-        <rdfs:comment>graph1 refers to
-\graph1 PlayerA a Attacker&quot;
-(see StreamingDataGraph
-individuals for details)</rdfs:comment>
+        <rdfs:comment>graph1 refers to graph1 PlayerA a Attacker&quot; (see StreamingDataGraph individuals for details)</rdfs:comment>
         <prov:wasGeneratedBy rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults"/>
     </owl:NamedIndividual>
     
@@ -370,8 +365,7 @@ individuals for details)</rdfs:comment>
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryParticipationRecency"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#RecencyTimestamp"/>
         <prov:value rdf:datatype="&xsd;dateTime">2011-07-16T02:52:02Z</prov:value>
-        <rdfs:comment>the timestamp when graph1
-participates in the query.</rdfs:comment>
+        <rdfs:comment>the timestamp when graph1 participates in the query.</rdfs:comment>
         <prov:wasGeneratedBy rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#aDataItemIsUsedByQueryEngineForResults"/>
     </owl:NamedIndividual>
     
@@ -433,8 +427,7 @@ participates in the query.</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#soccer_offside_query_relevance_ontology">
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology"/>
-        <rdfs:comment>the query relevance ontology to
-help filter irrelevant data out</rdfs:comment>
+        <rdfs:comment>the query relevance ontology to help filter irrelevant data out</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -443,9 +436,7 @@ help filter irrelevant data out</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#stardog_triplestore_sparql_engine">
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryEngine"/>
-        <rdfs:comment>in soccer offside use case, Stardog
-triplestore is used thus its SPARQL
-query engine is used.</rdfs:comment>
+        <rdfs:comment>in soccer offside use case, Stardog triplestore is used thus its SPARQL query engine is used.</rdfs:comment>
     </owl:NamedIndividual>
     
 
