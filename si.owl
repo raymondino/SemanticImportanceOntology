@@ -261,7 +261,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryResult"/>
         <rdfs:comment>the query result indicates
 that PlayerA commits
-an oside oence</rdfs:comment>
+an offside offence</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -434,7 +434,7 @@ participates in the query.</rdfs:comment>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#soccer_offside_query_relevance_ontology">
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryRelevanceOntology"/>
         <rdfs:comment>the query relevance ontology to
-help lter irrelevant data out</rdfs:comment>
+help filter irrelevant data out</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -443,7 +443,7 @@ help lter irrelevant data out</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#stardog_triplestore_sparql_engine">
         <rdf:type rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#QueryEngine"/>
-        <rdfs:comment>in soccer oside use case, Stardog
+        <rdfs:comment>in soccer offside use case, Stardog
 triplestore is used thus its SPARQL
 query engine is used.</rdfs:comment>
     </owl:NamedIndividual>
