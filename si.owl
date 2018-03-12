@@ -75,6 +75,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#DataTrustWorthiness">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:comment xml:lang="en">trust score is able to increase precision by 12.5x, reduce response time by 27.43x, reduce memory consumption by 7.9x, and increase throughtpu by 17.83x. In our experiments, we have tested both constant mode streaming and fluctuating mode streaming, trustworthiness is able to perform well in general. It is resilient with both high streaming rate or streaming bursts.  </rdfs:comment>
     </owl:Class>
     
 
@@ -83,6 +84,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/rui/ontologies/semanticimportance#ExpirationTimestamp">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#TemporalProvenance"/>
+        <rdfs:comment xml:lang="en">expiration timestamp is one temporal provenance. It performs slightly better thant FIFO, the commonly used strategy, but does not provide a signifcant number in terms of performance. However, it is important to include expiration timestamp if your streaming data naturally carries expiratoin timestamps, so as to avoid early expiration problem. Streaming rate does affect the expiration timestamp&apos;s performance in window management, as the streaming rate increases, the performance drops. </rdfs:comment>
     </owl:Class>
     
 
@@ -142,6 +144,7 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
         <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <rdfs:comment xml:lang="en">query participation&apos;s performance is slightly better thant FIFO, but very close. query participation is useful when we need to know which data can contribute to the query result. However, this requires reasoning explanation, which might consume more time. Thus query participation performs not well when the streaming rate is big. </rdfs:comment>
     </owl:Class>
     
 
@@ -186,6 +189,7 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rui/ontologies/semanticimportance#SemanticImportance"/>
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:comment xml:lang="en">query relevance requires both the query relevanc eontology and query relevance filter query. Both of them are important for timely response. Query relevance is able to increase precision by 2.38x, reduce response time by 7.6x, reduce memory consumption by 253.71x (this is a signifcant number), as well as increase throughput by 1.86x. However from the experimental result, we can see that query relevance works well when the streaming rate is smaller, like 10k - 30k data items per second, however, as the streaming rate increases, the filtering process ends up to be really time-consuming, thus the system performance is adversely impacted. So suggest to apply query relevance when data rate is small. </rdfs:comment>
     </owl:Class>
     
 
